@@ -1,0 +1,166 @@
+{% extends "focus/base.html" %}
+
+{% block title %}Evaluation page{% endblock %}
+
+{% block content %}
+
+
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1>Комплексный анализ</h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">{{title}}</span>
+              <form id="stripe-login" method="post">
+                {% csrf_token %}
+                <ol>
+                  <li>
+                    <p>
+                      <label for="id_user_teacher">Учитель:</label>
+                      {{ focuscomplex1_form.user_teacher }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_subject">Предмет:</label>
+                      {{ focuscomplex1_form.subject }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_schoolyear">Год обучения:</label>
+                      {{ focuscomplex1_form.schoolyear }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_pdg">Цель:</label>
+                      {{ focuscomplex1_form.pdg }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_classes">Класс:</label>
+                      {{ focuscomplex1_form.classes }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fc1_lessontopic">Тема урока:</label>
+                      {{ focuscomplex1_form.fc1_lessontopic }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_fс1_item1">Представлен план:</label>
+                      {{ focuscomplex1_form.fc1_item1}}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                        Цели обучения соответствуют месту и роли урока в структуре раздела, темы
+                      {{ focuscomplex1_form.fc1_item2}}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Учитель обсуждает с учащимися цели обучения и ожидаемые результаты урока
+                      {{ focuscomplex1_form.fc1_item3 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Учитель соблюдает структуру урока в соответствии с планом (при необходимости корректирует план урока, не нарушая логической последовательности этапов урока)
+                      {{ focuscomplex1_form.fc1_item4 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                        <label for="id_fc1_item5">При организации изучения учебного материала учитель реализует:</label>
+                        {{ focuscomplex1_form.fc1_item5 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Учитель использует приемы обучения, способствующие достижению целей обучения
+                      {{ focuscomplex1_form.fc1_item6 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fc1_item7">Учитель использует ресурсы, направленные на:</label>
+                        {{ focuscomplex1_form.fc1_item7 }}
+                    </p>
+                  </li>
+
+                    <li>
+                    <p>
+                      Учитель отслеживает вовлеченность каждого учащегося
+                      {{ focuscomplex1_form.fс1_item8 }}
+                    </p>
+                  </li>
+                    <li>
+                    <p>
+                      Учитель предлагает учащимся критерии и дескрипторы оценивания в соответствии с целями обучения
+                      {{ focuscomplex1_form.fc1_item9 }}
+                    </p>
+                  </li>
+                    <li>
+                    <p>
+                      Учитель поддерживает обучение учащихся соответствующими приемами формативного оценивания
+                      {{ focuscomplex1_form.fc1_item10 }}
+                    </p>
+                  </li>
+                    <li>
+                    <p>
+                      Учитель предоставляет конструктивную обратную связь учащимся
+                      {{ focuscomplex1_form.fc1_item11 }}
+                    </p>
+                  </li>
+                    <li>
+                    <p>
+                      Учитель использует результаты формативного оценивания для планирования уроков
+                      {{ focuscomplex1_form.fc1_item12 }}
+                    </p>
+                  </li>
+
+
+                  <li>
+                    <p>
+                      <label for="id_fc1_review">Краткий отзыв о наблюдении урока:</label>
+                      {{ focuscomplex1_form.fc1_review }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fc1_review_pdg">Краткий отзыв о продвижении учителя к достижению цели профессионального развития на учебный год:</label>
+                      {{ focuscomplex1_form.fc1_review_pdg }}
+                    </p>
+                  </li>
+
+                  </ol>
+
+
+
+
+                <input type="submit" value="Отправить">
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

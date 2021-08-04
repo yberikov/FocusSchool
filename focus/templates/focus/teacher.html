@@ -1,0 +1,58 @@
+{% extends "focus/base.html" %}
+
+
+{% block title %}Мои работы{% endblock %}
+
+{% block content %}
+<div class="content_header">
+    <h1>Таблица ваших работ, которые были оценены</h1>
+</div>
+
+
+<table>
+    <thead>
+		<tr>
+			<th>Учитель-эксперт</th>
+			<th>Предмет</th>
+			<th>Год</th>
+			<th>Дата</th>
+            <th>Подтверждено</th>
+            <th>Фокус</th>
+		</tr>
+	</thead>
+    <tbody>
+
+    {% if focusplan1_records %}
+    {% for item in focusplan1_records %}
+    <tr>
+        <td>{{item.user_observer}}</td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fp1_date}}</td>
+
+        <td><div class="container">
+    <input type="checkbox" id="toggle-button" class="toggle-button">
+  </div></td>
+        <td>Планирование 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    {% if focusteach1_records %}
+    {% for item in focusteach1_records %}
+    <tr>
+        <td>{{item.user_observer}}</td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fp1_date}}</td>
+
+        <td><div class="container">
+    <input type="checkbox" id="toggle-button" class="toggle-button">
+  </div></td>
+        <td>Преподавание 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}

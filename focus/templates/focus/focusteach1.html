@@ -1,0 +1,136 @@
+{% extends "focus/base.html" %}
+
+{% block title %}Evaluation page{% endblock %}
+
+{% block content %}
+
+
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1>Преподавание</h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">{{title}}</span>
+              <form id="stripe-login" method="post">
+                {% csrf_token %}
+                <ol>
+                  <li>
+                    <p>
+                      <label for="id_user_teacher">Учитель:</label>
+                      {{ focusteach1_form.user_teacher }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_subject">Предмет:</label>
+                      {{ focusteach1_form.subject }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_schoolyear">Год обучения:</label>
+                      {{ focusteach1_form.schoolyear }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_pdg">Цель:</label>
+                      {{ focusteach1_form.pdg }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_classes">Класс:</label>
+                      {{ focusteach1_form.classes }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_ft1_lessontopic">Тема урока:</label>
+                      {{ focusteach1_form.ft1_lessontopic }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_ft1_item1">Учителем представлен:</label>
+                      {{ focusteach1_form.ft1_item1 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Учитель обсуждает с учащимися цели обучения и ожидаемые результаты урока
+                      {{ focusteach1_form.ft1_item2 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Учитель соблюдает структуру урока в соответствии с планом (при необходимости корректирует план урока, не нарушая логической последовательности этапов урока)
+                      {{ focusteach1_form.ft1_item3 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_ft1_item4">При организации изучения учебного материала учитель реализует*:</label>
+                      {{ focusteach1_form.ft1_item4 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                    Учитель использует приемы обучения, способствующие достижению целей обучения
+                    {{ focusteach1_form.ft1_item5 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Учитель использует ресурсы, направленные на:
+                      {{ focusteach1_form.ft1_item6 }}
+                    </p>
+                  </li>
+
+
+
+                  <li>
+                    <p>
+                      <label for="id_ft1_additional">Альтернативная часть :</label>
+                      {{ focusteach1_form.ft1_additional }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_ft1_review">Краткий отзыв о наблюдении урока:</label>
+                      {{ focusteach1_form.ft1_review }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_ft1_review_pdg">Краткий отзыв о продвижении учителя к достижению цели профессионального развития на учебный год:</label>
+                      {{ focusteach1_form.ft1_review_pdg }}
+                    </p>
+                  </li>
+
+                  </ol>
+
+
+
+
+                <input type="submit" value="Отправить">
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

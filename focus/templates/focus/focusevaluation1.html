@@ -1,0 +1,131 @@
+{% extends "focus/base.html" %}
+
+{% block title %}Evaluation page{% endblock %}
+
+{% block content %}
+
+
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1>Оценивание</h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">{{title}}</span>
+              <form id="stripe-login" method="post">
+                {% csrf_token %}
+                <ol>
+                  <li>
+                    <p>
+                      <label for="id_user_teacher">Учитель:</label>
+                      {{ focusevaluation1_form.user_teacher }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_subject">Предмет:</label>
+                      {{ focusevaluation1_form.subject }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_schoolyear">Год обучения:</label>
+                      {{ focusevaluation1_form.schoolyear }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_pdg">Цель:</label>
+                      {{ focusevaluation1_form.pdg }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_classes">Класс:</label>
+                      {{ focusevaluation1_form.classes }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fe1_lessontopic">Тема урока:</label>
+                      {{ focusevaluation1_form.fe1_lessontopic }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                        Учитель отслеживает вовлеченность каждого учащегося
+                      {{ focusevaluation1_form.fe1_item1 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Учитель предлагает учащимся критерии и дескрипторы оценивания в соответствии с целями обучения
+                      {{ focusevaluation1_form.fe1_item2 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Учитель поддерживает обучение учащихся соответствующими приемами формативного оценивания
+                      {{ focusevaluation1_form.fe1_item3 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Учитель предоставляет конструктивную обратную связь учащимся
+                      {{ focusevaluation1_form.fe1_item4 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                    Учитель использует результаты формативного оценивания для планирования уроков
+                    {{ focusevaluation1_form.fe1_item5 }}
+                    </p>
+                  </li>
+
+
+
+
+
+                  <li>
+                    <p>
+                      <label for="id_fe1_additional">Альтернативная часть :</label>
+                      {{ focusevaluation1_form.fe1_additional }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fe1_review">Краткий отзыв о наблюдении урока:</label>
+                      {{ focusevaluation1_form.fe1_review }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fe1_review_pdg">Краткий отзыв о продвижении учителя к достижению цели профессионального развития на учебный год:</label>
+                      {{ focusevaluation1_form.fe1_review_pdg }}
+                    </p>
+                  </li>
+
+                  </ol>
+
+
+
+
+                <input type="submit" value="Отправить">
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

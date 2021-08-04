@@ -1,0 +1,141 @@
+{% extends "focus/base.html" %}
+
+{% block title %}Evaluation page{% endblock %}
+
+{% block content %}
+
+
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1>Планирование</h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <span class="padding-bottom--15">{{title}}</span>
+              <form id="stripe-login" method="post">
+                {% csrf_token %}
+                <ol>
+                  <li>
+                    <p>
+                      <label for="id_user_teacher">Учитель:</label>
+                      {{ focusplan1_form.user_teacher }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_subject">Предмет:</label>
+                      {{ focusplan1_form.subject }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_schoolyear">Год обучения:</label>
+                      {{ focusplan1_form.schoolyear }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_pdg">Цель:</label>
+                      {{ focusplan1_form.pdg }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_classes">Класс:</label>
+                      {{ focusplan1_form.classes }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fp1_lessontopic">Тема урока:</label>
+                      {{ focusplan1_form.fp1_lessontopic }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_fp1_item1">Представлен план:</label>
+                      {{ focusplan1_form.fp1_item1 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      План содержит понятные для учащихся ожидаемые результаты урока и критерии успеха:
+                      {{ focusplan1_form.fp1_item2 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Структура плана урока отражает логическую взаимосвязь между его этапами
+                      {{ focusplan1_form.fp1_item3 }}
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <label for="id_fp1_item1">Учебный материал отражает:</label>
+                      {{ focusplan1_form.fp1_item4 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                    Планируемые приемы обучения соотносятся с целями обучения и ожидаемыми результатами :
+                    {{ focusplan1_form.fp1_item5 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Планируемые ресурсы направлены на достижение целей обучения
+                      {{ focusplan1_form.fp1_item6 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      Планируемые стратегии оценивания учебных достижений учащихся направлены на достижение целей обучения
+                      {{ focusplan1_form.fp1_item7 }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fp1_additional">Альтернативная часть :</label>
+                      {{ focusplan1_form.fp1_additional }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fp1_review">Краткий отзыв о наблюдении урока:</label>
+                      {{ focusplan1_form.fp1_review }}
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <label for="id_fp1_review_pdg">Краткий отзыв о продвижении учителя к достижению цели профессионального развития на учебный год:</label>
+                      {{ focusplan1_form.fp1_review_pdg }}
+                    </p>
+                  </li>
+
+                  </ol>
+
+
+
+
+                <input type="submit" value="Отправить">
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

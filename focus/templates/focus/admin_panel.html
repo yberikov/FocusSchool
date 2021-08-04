@@ -1,0 +1,90 @@
+{% extends "focus/base.html" %}
+
+
+{% block title %}Поиск оценивания{% endblock %}
+
+{% block content %}
+<div class="content_header">
+    <h1>Таблица оцениваний</h1>
+</div>
+
+<form class="form-inline my-2 my-lg-0" action="{% url 'admin_panel' %}">
+    <input class="form-control mr-sm-2" type="search"   placeholder="Search" aria-label="Search" name="search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<table>
+    <thead>
+		<tr>
+			<th>Учитель</th>
+			<th>Предмет</th>
+			<th>Год</th>
+			<th>Дата</th>
+            <th>Фокус</th>
+		</tr>
+	</thead>
+    <tbody>
+
+    {% if posts1 %}
+    {% for item in posts1 %}
+    <tr>
+        <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fp1_date}}</td>
+        <td>Планирование 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+
+    {% if posts1 %}
+    {% for item in posts1 %}
+    <tr>
+        <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fp1_date}}</td>
+        <td>Планирование 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+
+    {% if posts2 %}
+    {% for item in posts2 %}
+    <tr>
+        <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.ft1_date}}</td>
+        <td>Преподавание 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+
+    {% if posts3 %}
+    {% for item in posts3 %}
+    <tr>
+        <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fe1_date}}</td>
+        <td>Оценивание 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+
+    {% if posts4 %}
+    {% for item in posts4 %}
+    <tr>
+        <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fc1_date}}</td>
+        <td>Комплексный анализ 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    </tbody>
+</table>
+
+{% endblock %}
