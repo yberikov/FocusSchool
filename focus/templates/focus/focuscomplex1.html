@@ -14,7 +14,7 @@
         </div>
         <div class="formbg-outer">
           <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
+            <div class="focus_forms">
               <span class="padding-bottom--15">{{title}}</span>
               <form id="stripe-login" method="post">
                 {% csrf_token %}
@@ -150,7 +150,13 @@
 
                   </ol>
 
-
+<script>
+                {% if messages %}
+                  {% for message in messages %}
+                    alert('{{message}}')
+                  {% endfor %}
+                {% endif %}
+                </script>
 
 
                 <input type="submit" value="Отправить">

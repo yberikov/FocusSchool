@@ -6,10 +6,10 @@ class UserProfileInfo(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     user_middlename = models.CharField(max_length=150, )
-    user_level = models.CharField(max_length=2)
+    user_level = models.IntegerField(verbose_name='Статус')
 
     def __str__(self):
-        return self.user.first_name + ' ' + self.user.last_name
+        return self.user.last_name + ' ' + self.user.first_name
 
     @property
     def full_name(self):

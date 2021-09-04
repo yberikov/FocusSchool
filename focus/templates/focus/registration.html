@@ -15,12 +15,42 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Sign up</span>
+
               <form id="stripe-login" method="post">
                 {% csrf_token %}
-                {{ user_form.as_p }}
-                {{ profile_form.as_p}}
-                <input type="submit" value="Register">
+                <p class="form_fields">
+                  <label for="id_username">Логин:</label>
+                  {{user_form.username}}
+                </p>
+                <p class="form_fields">
+                  <label for="id_email">Email:</label>
+                  {{user_form.email}}
+                </p>
+                <p class="form_fields">
+                  <label for="id_password">Пароль:</label>
+                  {{user_form.password}}
+                </p>
+
+                <p class="form_fields">
+                  <label for="id_last_name">Фамилия:</label>
+                  {{user_form.last_name}}
+                </p>
+
+                <p class="form_fields">
+                  <label for="id_first_name">Имя:</label>
+                  {{user_form.first_name}}
+                </p>
+
+                <p class="form_fields">
+                  <label for="id_user_middlename">Отчество:</label>
+                  {{ profile_form.user_middlename}}
+                </p>
+                <p class="form_fields">
+                  <label for="id_user_level">Статус:</label>
+                  {{ profile_form.user_level}}
+                </p>
+
+                <input class="register_btn" type="submit" value="Регистрация">
               </form>
             </div>
           </div>

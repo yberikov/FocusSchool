@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>{% block title %}{% endblock %}</title>
-    
+    {% block head %}{% endblock %}
     
     <link rel="stylesheet" href="{% static 'focus/css/style.css'%}" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,18 +23,29 @@
                 
                 <nav class="nav">
                     <a href="{%url 'index'%}" class="nav__link">Главная</a>
+                    {% if current_user.user_level == '7' %}
                     <a href="{%url 'admin_panel'%}" class="nav__link">Панель Админа</a>
+                    {% endif %}
                     <div class="dropdown">
                         <div class="dropbtn ">Наблюдение
                           <i class="fa fa-caret-down"></i>
                         </div>
                         <div class="dropdown-content">
-                          <a href="{%url 'focusplan1'%}">Форма Планирования</a>
-                            <a href="{%url 'focusteach1'%}">Форма Преподавания</a>
-                            <a href="{%url 'focusevaluation1'%}">Форма Оценивания</a>
-                            <a href="{%url 'focuscomplex1'%}">Форма Комплексного анализа</a>
-                          <a href="{%url 'observer_evaluation'%}">Мои оценивания</a>
-                          <a href="{%url 'teacher_evaluation'%}">Мои работы</a>
+                            {% if current_user.user_level %}
+                                <a href="{%url 'focusplan1'%}">Форма Планирования</a>
+                                <a href="{%url 'focusteach1'%}">Форма Преподавания</a>
+                                <a href="{%url 'focusevaluation1'%}">Форма Оценивания</a>
+                                <a href="{%url 'focuscomplex1'%}">Форма Комплексного анализа</a>
+                                <a href="{%url 'observer_evaluation'%}">Мои оценивания</a>
+                                <a href="{%url 'teacher_evaluation'%}">Мои работы</a>
+                            {% else %}
+                                <a href="{%url 'user_login'%}">Форма Планирования</a>
+                                <a href="{%url 'user_login'%}">Форма Преподавания</a>
+                                <a href="{%url 'user_login'%}">Форма Оценивания</a>
+                                <a href="{%url 'user_login'%}">Форма Комплексного анализа</a>
+                                <a href="{%url 'user_login'%}">Мои оценивания</a>
+                                <a href="{%url 'user_login'%}">Мои работы</a>
+                            {% endif %}
                         </div>
                     </div>
 

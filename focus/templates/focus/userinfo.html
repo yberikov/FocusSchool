@@ -5,51 +5,114 @@
 {% block content %}
 
 
+<div class="userinfo">
+  
+    <div class="profileblock">
 
-<div class="login-root">
-    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
-      
-      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
-        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
-          <h1>User Info</h1>
+    <div class="options">
+      <div class="options_item">Overview</div>
+      <div class="options_item">Change password</div>
+      <div class="options_item">Profile picture</div>
+    </div>
+
+    <div class="profile">
+
+      <div class="profile_top">
+
+        <div class="row">
+
+        <div class="profile_photo">
+          <img src="../../static/focus/img/profile-icon.png" alt="" class="profile_img">
         </div>
-        <div class="formbg-outer">
-          <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Информация о пользователе {{ user_info.username}}</span>
-              <form id="stripe-login" method="post">
-                {% csrf_token %}
 
+        <div class="profile_info">
+          <div class="profile_info_left">
+            <div class="profile_info_name">{{ user_info.last_name}} {{ user_info.first_name}}</div>
+            <div class="profile_info_username">@{{ user_info.username}}</div>
+            <div class="profile_info_small">Last seen 2 hours ago</div>
+          </div>
+          <div class="profile_info_right">
+            <div class="badge">administrator</div>
+            <div class="date profile_info_small">Joined 09 Dec 2017</div>
+          </div>
+        </div>
 
-                <label for="id_username">Username:</label>
-                <input type="text" name="username" maxlength="150" required="" id="id_username" value='{{ user_info.username}}'>
+        </div>
 
-                <label for="id_email">Email address:</label>
-                <input type="email" name="email" maxlength="254" id="id_email" value='{{ user_info.email}}'>
+      </div>
 
-                Hello world
+      <div class="profile_form">
+        <form method="post">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col">
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="id_username">Username:</label>
+                          <input type="text" class="form-control" name="username" maxlength="150" required="" id="id_username" value='{{ user_info.username}}'>
+                      </div>
+                    </div>
+                    
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="id_email">Email address:</label>
+                        <input type="email" class="form-control" name="email" maxlength="254" id="id_email" value='{{ user_info.email}}'>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="id_first_name">First name:</label>
+                        <input type="text" class="form-control" name="first_name" maxlength="30" id="id_first_name" value='{{ user_info.first_name}}'>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="id_last_name">Last name:</label>
+                        <input type="text" class="form-control" name="last_name" maxlength="150" id="id_last_name" value='{{ user_info.last_name}}'>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="id_user_middlename">User middlename:</label>
+                  <input type="text" class="form-control" name="user_middlename" maxlength="150"  id="id_user_middlename" value='{{ current_user.user_middlename}}'>
+                      </div>
+                    </div>
                 
+                  </div>
 
-                <label for="id_first_name">First name:</label>
-                <input type="text" name="first_name" maxlength="30" id="id_first_name" value='{{ user_info.first_name}}'>
-
-                <label for="id_last_name">Last name:</label>
-                <input type="text" name="last_name" maxlength="150" id="id_last_name" value='{{ user_info.last_name}}'>
-
-                <label for="id_user_middlename">User middlename:</label>
-                <input type="text" name="user_middlename" maxlength="150"  id="id_user_middlename" value='{{ user_info.user_middlename}}'>
-
-                <label for="id_user_level">User level:</label>
-                <input type="text" name="user_level" maxlength="2"  id="id_user_level" value='{{ user_info.user_level}}'>
-                <p></p>
-                <input type="submit" value="Сохранить">
-              </form>
             </div>
           </div>
-          
-        </div>
+          <div class="row ">
+            <div class="col btn-end">
+              <button class="btn btn-primary" type="submit">
+                Save changes
+              </button>
+            </div>
+          </div>
+
+        </form>
       </div>
+
+
     </div>
-  </div>
+
+    </div>
+</div>
+
+
+
+
+
 
 {% endblock %}

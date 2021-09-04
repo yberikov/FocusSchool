@@ -4,7 +4,7 @@ body {
     font-size: 14px;
     color: #6c7279;
     -webkit-font-smoothing: antialiased;
-    background-color: white;
+    background-color: rgb(241, 241, 241);
 }
 
 *,
@@ -45,11 +45,15 @@ p {
 
 .header {
     color: rgb(0, 0, 0);
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
     top: 0;
     left: 0;
     z-index: 1000;
     width: 100%;
     height: 100px;
+    
 }
 
 .header__inner{
@@ -57,6 +61,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 45px;
 }
 .header-logo {
     max-width: 400px;
@@ -303,15 +308,12 @@ p {
 }
 span {
     display: block;
-    font-size: 20px;
-    line-height: 28px;
-    color: #1a1f36;
+
 }
 label {
     margin-bottom: 10px;
 }
 .reset-pass a,label {
-    font-size: 14px;
     font-weight: 600;
     display: block;
 }
@@ -468,7 +470,7 @@ blockquote:before,
 blockquote:after {
 	position: absolute;
 	color: #f1efe6;
-	font-size: 8rem;
+	font-size: 3rem;
 	width: 4rem;
 	height: 4rem;
 }
@@ -536,4 +538,181 @@ cite {
 }
 .toggle-button:checked {
     background-color: rgb(42, 185, 37);
+}
+
+
+/* USERINFO PAGE */
+.userinfo {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.profileblock {
+    display: flex;
+    margin-top: 50px;
+}
+.options {
+    max-height: 150px;
+    width: 200px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    background-color:#fff;
+    flex: 0 0 200px;
+    margin-right: 15px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    }
+.options_item {
+    font-size: 16px;
+    text-align: center;
+    color: rgb(77, 163, 243);
+    margin: 7px 0;
+}
+.options_item:hover{
+    color: #5469d4;
+}
+.profile {
+    flex: 1 1 auto;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.profile_photo {
+    flex: 0 0 200px;
+}
+.profile_img {
+    width: 150px;
+    height: 150px;
+}
+.profile_info {
+    flex: 1 1 auto;
+    display: flex;
+    padding-right: 15px;
+    padding-left: 15px;
+    justify-content: space-between;
+}
+
+.profile_info_name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: black;
+    margin-bottom: 3px;
+}
+.profile_info_username {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    margin-bottom: 3px;
+}
+
+.profile_info_small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+
+.badge {
+    float: right;
+    /*display: inline-block;*/
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #6c757d;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.form-group {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    cursor: default;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border 0.3s ease-in-out; 
+}
+
+.form-control:hover {
+    border: 2px solid #0d7be9;
+    transition: border-color 0.3s ease-in-out; 
+}
+.btn-end {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.select2-container{
+    width: 160px !important;
+}
+
+.form_fields{
+display: flex;
+justify-content: space-between;
+}
+.focus_forms{
+padding: 15px;
+}
+.formbg-inner{
+ padding: 48px 200px;
+}
+.register_btn {
+margin: 15px 15px 15px 85px;
+font-size: 16px;
 }
