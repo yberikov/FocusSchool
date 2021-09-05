@@ -10,9 +10,10 @@
     <div class="profileblock">
 
     <div class="options">
-      <div class="options_item">Overview</div>
-      <div class="options_item">Change password</div>
-      <div class="options_item">Profile picture</div>
+      <div class="options_item">Общее</div>
+      <div class="options_item"><a href="{%url 'add_pdg'%}">Добавить ЦПР</a></div>
+      <div class="options_item">Изменение пароля</div>
+      <div class="options_item">Фотография профиля</div>
     </div>
 
     <div class="profile">
@@ -29,7 +30,7 @@
           <div class="profile_info_left">
             <div class="profile_info_name">{{ user_info.last_name}} {{ user_info.first_name}}</div>
             <div class="profile_info_username">@{{ user_info.username}}</div>
-            <div class="profile_info_small">Last seen 2 hours ago</div>
+            <div class="profile_info_small">В сети</div>
           </div>
           <div class="profile_info_right">
             <div class="badge">administrator</div>
@@ -50,14 +51,14 @@
                   <div class="row">
                     <div class="col">
                       <div class="form-group">
-                        <label for="id_username">Username:</label>
+                        <label for="id_username">Логин:</label>
                           <input type="text" class="form-control" name="username" maxlength="150" required="" id="id_username" value='{{ user_info.username}}'>
                       </div>
                     </div>
                     
                     <div class="col">
                       <div class="form-group">
-                        <label for="id_email">Email address:</label>
+                        <label for="id_email">Email:</label>
                         <input type="email" class="form-control" name="email" maxlength="254" id="id_email" value='{{ user_info.email}}'>
                       </div>
                     </div>
@@ -66,7 +67,7 @@
                   <div class="row">
                     <div class="col">
                       <div class="form-group">
-                        <label for="id_first_name">First name:</label>
+                        <label for="id_first_name">Имя:</label>
                         <input type="text" class="form-control" name="first_name" maxlength="30" id="id_first_name" value='{{ user_info.first_name}}'>
                       </div>
                     </div>
@@ -75,7 +76,7 @@
                   <div class="row">
                     <div class="col">
                       <div class="form-group">
-                        <label for="id_last_name">Last name:</label>
+                        <label for="id_last_name">Фамилия:</label>
                         <input type="text" class="form-control" name="last_name" maxlength="150" id="id_last_name" value='{{ user_info.last_name}}'>
                       </div>
                     </div>
@@ -84,7 +85,7 @@
                   <div class="row">
                     <div class="col">
                       <div class="form-group">
-                        <label for="id_user_middlename">User middlename:</label>
+                        <label for="id_user_middlename">Отчество:</label>
                   <input type="text" class="form-control" name="user_middlename" maxlength="150"  id="id_user_middlename" value='{{ current_user.user_middlename}}'>
                       </div>
                     </div>
@@ -96,7 +97,7 @@
           <div class="row ">
             <div class="col btn-end">
               <button class="btn btn-primary" type="submit">
-                Save changes
+                Сохранить
               </button>
             </div>
           </div>

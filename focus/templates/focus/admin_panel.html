@@ -27,18 +27,7 @@
 	</thead>
     <tbody>
 
-    {% if posts1 %}
-    {% for item in posts1 %}
-    <tr>
-        <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
-        <td>{{item.user_observer}}</td>
-        <td>{{item.subject}}</td>
-        <td>{{item.schoolyear}}</td>
-        <td>{{item.fp1_date}}</td>
-        <td>Планирование 1</td>
-    </tr>
-    {% endfor %}
-    {% endif %}
+   
 
     {% if posts1 %}
     {% for item in posts1 %}

@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="content_header">
-    <h1>Таблица ваших работ, которые были оценены</h1>
+    <h1>Таблица наблюдений ваших работ</h1>
 </div>
 
 
@@ -43,12 +43,42 @@
         <td>{{item.user_observer}}</td>
         <td>{{item.subject}}</td>
         <td>{{item.schoolyear}}</td>
-        <td>{{item.fp1_date}}</td>
+        <td>{{item.ft1_date}}</td>
 
         <td><div class="container">
     <input type="checkbox" id="toggle-button" class="toggle-button">
   </div></td>
         <td>Преподавание 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    {% if focusevaluation1_records %}
+    {% for item in focusevaluation1_records %}
+    <tr>
+        <td>{{item.user_observer}}</td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fe1_date}}</td>
+
+        <td><div class="container">
+    <input type="checkbox" id="toggle-button" class="toggle-button">
+  </div></td>
+        <td>Оценивание 1</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+    {% if focuscomplex1_records %}
+    {% for item in focuscomplex1_records %}
+    <tr>
+        <td>{{item.user_observer}}</td>
+        <td>{{item.subject}}</td>
+        <td>{{item.schoolyear}}</td>
+        <td>{{item.fc1_date}}</td>
+
+        <td><div class="container">
+    <input type="checkbox" id="toggle-button" class="toggle-button">
+  </div></td>
+        <td>Комплексный анализ 1</td>
     </tr>
     {% endfor %}
     {% endif %}

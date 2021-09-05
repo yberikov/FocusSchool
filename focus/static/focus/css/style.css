@@ -33,15 +33,8 @@ p {
     padding: 0 15px;
 }
 
-/* Container */
-.container{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
 
-/* Header */
+/* ------> Header <------ */
 
 .header {
     color: rgb(0, 0, 0);
@@ -52,7 +45,7 @@ p {
     left: 0;
     z-index: 1000;
     width: 100%;
-    height: 100px;
+    height: 110px;
     
 }
 
@@ -85,7 +78,8 @@ p {
     max-width: 500px;
 }
 
-/* Navigation */
+/* ------> Navigation <------ */
+
 .nav {
     padding-top: 45px;
     font-size: 13px;
@@ -124,20 +118,15 @@ p {
     margin-left: 50px;
     border: none;
     padding: 10px;
-    
-    
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     margin-left: 10px;
-    
     position: absolute;
     left: 15px;
     background-color: #ffffff;
@@ -145,35 +134,31 @@ p {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1000;
     opacity: 0;
-
     visibility: hidden;
     transition: opacity 500ms, visibility 500ms;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
-    
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;
+.dropdown:hover .dropdown-content {
+    display: block;
     visibility: visible;
-  opacity: 1;}
+    opacity: 1;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn { 
     background-color: #43cc48;
     color: white;
 }
 
-
+/* -------- Form ----------*/
 .form {
     margin: 0 auto;
     height: 700px;
@@ -215,8 +200,9 @@ p {
     padding: 0 7px 0 43px;
 }
 
+/* ---------> Login <----------*/
+
 .login-root {
-    
     display: flex;
     width: 100%;
     min-height: 100vh;
@@ -291,7 +277,6 @@ p {
   padding-bottom: 15px;
 }
 
-
 .flex-justifyContent--center {
   -ms-flex-pack: center;
   justify-content: center;
@@ -312,6 +297,10 @@ span {
 }
 label {
     margin-bottom: 10px;
+}
+.reset-pass a {
+    font-size: 12px;
+    color: #6c7279;
 }
 .reset-pass a,label {
     font-weight: 600;
@@ -385,6 +374,11 @@ a.ssolink {
     font-weight: 600;
     margin: 0 10px;
 }
+
+.no_accout:hover{
+    color: #5469d4;
+}
+
 /* Table */
 
 table {
@@ -441,7 +435,7 @@ table tbody tr:last-child td:last-child {
     margin-bottom: 50px;
 }
 
-/*Quate index*} */
+/* <----- Quate index ----->*/
 
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
@@ -491,6 +485,7 @@ cite {
 	line-height: 3;
 	text-align: left;
 }
+
 /* Toggle button*/
 .toggle-button {
     -webkit-appearance: none;
@@ -565,6 +560,12 @@ cite {
     justify-content: space-around;
     }
 .options_item {
+    font-size: 16px;
+    text-align: center;
+    color: rgb(77, 163, 243);
+    margin: 7px 0;
+}
+.options_item a{
     font-size: 16px;
     text-align: center;
     color: rgb(77, 163, 243);
@@ -699,7 +700,7 @@ label {
 }
 
 .select2-container{
-    width: 160px !important;
+    min-width: 150px !important;
 }
 
 .form_fields{
@@ -716,3 +717,78 @@ padding: 15px;
 margin: 15px 15px 15px 85px;
 font-size: 16px;
 }
+
+/*Checkbox*/
+.check {
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    margin-right: 25px;
+}
+
+
+/*comment*/
+
+.comment_field{
+    display: flex;
+}
+.comment_value {
+    display: flex;
+}
+.comment_btn {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+
+.arrow {
+    height: 15px;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.1s;
+    width: 15px;
+  }
+  .arrow-top, .arrow-bottom {
+    background-color: #666;
+    height: 4px;
+    left: -5px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+  .arrow-top:after, .arrow-bottom:after {
+    background-color: #5469d4;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.15s;
+  }
+  .arrow-top {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+  }
+  .arrow-top:after {
+    left: 100%;
+    right: 0;
+    transition-delay: 0s;
+  }
+  .arrow-bottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+  }
+  .arrow-bottom:after {
+    left: 0;
+    right: 100%;
+    transition-delay: 0.15s;
+  }
+  .arrow:hover .arrow-top:after {
+    left: 0;
+    transition-delay: 0.15s;
+  }
+  .arrow:hover .arrow-bottom:after {
+    right: 0;
+    transition-delay: 0s;
+  }
+  .arrow:active {
+    transform: translateX(-50%) translateY(-50%) scale(0.9);
+  }
