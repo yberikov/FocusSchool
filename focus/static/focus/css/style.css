@@ -4,7 +4,7 @@ body {
     font-size: 14px;
     color: #6c7279;
     -webkit-font-smoothing: antialiased;
-    background-color: white;
+    background-color: rgb(241, 241, 241);
 }
 
 *,
@@ -33,23 +33,20 @@ p {
     padding: 0 15px;
 }
 
-/* Container */
-.container{
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
 
-/* Header */
+/* ------> Header <------ */
 
 .header {
     color: rgb(0, 0, 0);
+    background-color: white;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
     top: 0;
     left: 0;
     z-index: 1000;
     width: 100%;
-    height: 100px;
+    height: 110px;
+    
 }
 
 .header__inner{
@@ -57,6 +54,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 45px;
 }
 .header-logo {
     max-width: 400px;
@@ -80,7 +78,8 @@ p {
     max-width: 500px;
 }
 
-/* Navigation */
+/* ------> Navigation <------ */
+
 .nav {
     padding-top: 45px;
     font-size: 13px;
@@ -119,20 +118,15 @@ p {
     margin-left: 50px;
     border: none;
     padding: 10px;
-    
-    
 }
 
-/* The container <div> - needed to position the dropdown content */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     margin-left: 10px;
-    
     position: absolute;
     left: 15px;
     background-color: #ffffff;
@@ -140,35 +134,31 @@ p {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1000;
     opacity: 0;
-
     visibility: hidden;
     transition: opacity 500ms, visibility 500ms;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
-    
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd;}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;
+.dropdown:hover .dropdown-content {
+    display: block;
     visibility: visible;
-  opacity: 1;}
+    opacity: 1;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn { 
     background-color: #43cc48;
     color: white;
 }
 
-
+/* -------- Form ----------*/
 .form {
     margin: 0 auto;
     height: 700px;
@@ -210,8 +200,9 @@ p {
     padding: 0 7px 0 43px;
 }
 
+/* ---------> Login <----------*/
+
 .login-root {
-    
     display: flex;
     width: 100%;
     min-height: 100vh;
@@ -286,7 +277,6 @@ p {
   padding-bottom: 15px;
 }
 
-
 .flex-justifyContent--center {
   -ms-flex-pack: center;
   justify-content: center;
@@ -303,15 +293,16 @@ p {
 }
 span {
     display: block;
-    font-size: 20px;
-    line-height: 28px;
-    color: #1a1f36;
+
 }
 label {
     margin-bottom: 10px;
 }
+.reset-pass a {
+    font-size: 12px;
+    color: #6c7279;
+}
 .reset-pass a,label {
-    font-size: 14px;
     font-weight: 600;
     display: block;
 }
@@ -383,6 +374,11 @@ a.ssolink {
     font-weight: 600;
     margin: 0 10px;
 }
+
+.no_accout:hover{
+    color: #5469d4;
+}
+
 /* Table */
 
 table {
@@ -439,7 +435,7 @@ table tbody tr:last-child td:last-child {
     margin-bottom: 50px;
 }
 
-/*Quate index*} */
+/* <----- Quate index ----->*/
 
 @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
@@ -468,7 +464,7 @@ blockquote:before,
 blockquote:after {
 	position: absolute;
 	color: #f1efe6;
-	font-size: 8rem;
+	font-size: 3rem;
 	width: 4rem;
 	height: 4rem;
 }
@@ -489,6 +485,7 @@ cite {
 	line-height: 3;
 	text-align: left;
 }
+
 /* Toggle button*/
 .toggle-button {
     -webkit-appearance: none;
@@ -537,3 +534,261 @@ cite {
 .toggle-button:checked {
     background-color: rgb(42, 185, 37);
 }
+
+
+/* USERINFO PAGE */
+.userinfo {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.profileblock {
+    display: flex;
+    margin-top: 50px;
+}
+.options {
+    max-height: 150px;
+    width: 200px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    background-color:#fff;
+    flex: 0 0 200px;
+    margin-right: 15px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    }
+.options_item {
+    font-size: 16px;
+    text-align: center;
+    color: rgb(77, 163, 243);
+    margin: 7px 0;
+}
+.options_item a{
+    font-size: 16px;
+    text-align: center;
+    color: rgb(77, 163, 243);
+    margin: 7px 0;
+}
+.options_item:hover{
+    color: #5469d4;
+}
+.profile {
+    flex: 1 1 auto;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.profile_photo {
+    flex: 0 0 200px;
+}
+.profile_img {
+    width: 150px;
+    height: 150px;
+}
+.profile_info {
+    flex: 1 1 auto;
+    display: flex;
+    padding-right: 15px;
+    padding-left: 15px;
+    justify-content: space-between;
+}
+
+.profile_info_name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: black;
+    margin-bottom: 3px;
+}
+.profile_info_username {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    margin-bottom: 3px;
+}
+
+.profile_info_small {
+    font-size: 80%;
+    font-weight: 400;
+}
+
+
+.badge {
+    float: right;
+    /*display: inline-block;*/
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: #6c757d;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.form-group {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    cursor: default;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border 0.3s ease-in-out; 
+}
+
+.form-control:hover {
+    border: 2px solid #0d7be9;
+    transition: border-color 0.3s ease-in-out; 
+}
+.btn-end {
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.select2-container{
+    min-width: 150px !important;
+}
+
+.form_fields{
+display: flex;
+justify-content: space-between;
+}
+.focus_forms{
+padding: 15px;
+}
+.formbg-inner{
+ padding: 48px 200px;
+}
+.register_btn {
+margin: 15px 15px 15px 85px;
+font-size: 16px;
+}
+
+/*Checkbox*/
+.check {
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    margin-right: 25px;
+}
+
+
+/*comment*/
+
+.comment_field{
+    display: flex;
+}
+.comment_value {
+    display: flex;
+}
+.comment_btn {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+
+.arrow {
+    height: 15px;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.1s;
+    width: 15px;
+  }
+  .arrow-top, .arrow-bottom {
+    background-color: #666;
+    height: 4px;
+    left: -5px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+  }
+  .arrow-top:after, .arrow-bottom:after {
+    background-color: #5469d4;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.15s;
+  }
+  .arrow-top {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+  }
+  .arrow-top:after {
+    left: 100%;
+    right: 0;
+    transition-delay: 0s;
+  }
+  .arrow-bottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+  }
+  .arrow-bottom:after {
+    left: 0;
+    right: 100%;
+    transition-delay: 0.15s;
+  }
+  .arrow:hover .arrow-top:after {
+    left: 0;
+    transition-delay: 0.15s;
+  }
+  .arrow:hover .arrow-bottom:after {
+    right: 0;
+    transition-delay: 0s;
+  }
+  .arrow:active {
+    transform: translateX(-50%) translateY(-50%) scale(0.9);
+  }

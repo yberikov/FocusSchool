@@ -16,5 +16,5 @@ urlpatterns = [
     path('focusevaluation1', views.focusevaluation1, name='focusevaluation1'),
     path('focuscomplex1', views.focuscomplex1, name='focuscomplex1'),
     path('admin_panel', views.admin_panel, name='admin_panel'),
-
+    path('add_pdg', views.add_pdg, name='add_pdg'),
 ]

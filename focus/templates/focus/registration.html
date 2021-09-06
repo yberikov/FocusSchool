@@ -6,28 +6,59 @@
 
 
 <div class="login-root">
-    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
-      
-      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
-        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+  <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+    <div class="box-root flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+      <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
           <h1>Регистрация</h1>
         </div>
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Sign up</span>
+
               <form id="stripe-login" method="post">
                 {% csrf_token %}
-                {{ user_form.as_p }}
-                {{ profile_form.as_p}}
-                <input type="submit" value="Register">
+                <div class="field padding-bottom--24">
+                  <label for="id_username">Логин:</label>
+                  {{user_form.username}}
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="id_email">Email:</label>
+                  {{user_form.email}}
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="id_password">Пароль:</label>
+                  {{user_form.password}}
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <label for="id_last_name">Фамилия:</label>
+                  {{user_form.last_name}}
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <label for="id_first_name">Имя:</label>
+                  {{user_form.first_name}}
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <label for="id_user_middlename">Отчество:</label>
+                  {{ profile_form.user_middlename}}
+                </div>
+                <div class="field padding-bottom--24">
+                  <label for="id_user_level">Статус:</label>
+                  {{ profile_form.user_level}}
+                </div>
+
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="submit" value="Регистрация">
+                </div>
+
               </form>
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>Don't have an account? <a href="">Sign up</a></span>
             <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
-              <span><a href="#">© Stackfindover</a></span>
+              <span><a href="#">© berikov.e</a></span>
               <span><a href="#">Contact</a></span>
               <span><a href="#">Privacy & terms</a></span>
             </div>

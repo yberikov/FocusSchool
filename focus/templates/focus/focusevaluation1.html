@@ -1,7 +1,8 @@
 {% extends "focus/base.html" %}
 
-{% block title %}Evaluation page{% endblock %}
-
+{% block title %}Оценивание{% endblock %}
+{% block head %}<link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+{% endblock %}
 {% block content %}
 
 
@@ -14,17 +15,25 @@
         </div>
         <div class="formbg-outer">
           <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">{{title}}</span>
+            <div class="focus_forms">
+              
               <form id="stripe-login" method="post">
                 {% csrf_token %}
                 <ol>
                   <li>
                     <p>
                       <label for="id_user_teacher">Учитель:</label>
-                      {{ focusevaluation1_form.user_teacher }}
+
+                        <select class="js-select2" name="user_teacher" id="id_user_teacher">
+                          <option value=""></option>
+                          {% for item in user_list%}
+                            <option value="{{item.id}}">{{item}}</option>
+                          {% endfor %}
+                        </select>
+
                     </p>
                   </li>
+
                   <li>
                     <p>
                       <label for="id_subject">Предмет:</label>
@@ -58,36 +67,81 @@
                   </li>
                   <li>
                     <p>
-                        Учитель отслеживает вовлеченность каждого учащегося
-                      {{ focusevaluation1_form.fe1_item1 }}
+                        
+                        <div class="comment_field">
+                          <div class="comment_label">
+                            Учитель отслеживает вовлеченность каждого учащегося
+                          </div>
+                          <div class="comment_value">
+                            {{ focusevaluation1_form.fe1_item1 }}
+                          </div>
+                          
+                        </div>
+                          {{ focusevaluation1_form.fe1_item1_comm }}
                     </p>
                   </li>
                   <li>
                     <p>
-                      Учитель предлагает учащимся критерии и дескрипторы оценивания в соответствии с целями обучения
-                      {{ focusevaluation1_form.fe1_item2 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель предлагает учащимся критерии и дескрипторы оценивания в соответствии с целями обучения
+                        </div>
+                        <div class="comment_value">
+                          {{ focusevaluation1_form.fe1_item2 }}
+                        </div>
+                        
+                      </div>
+                        {{ focusevaluation1_form.fe1_item2_comm }}
                     </p>
                   </li>
                   <li>
                     <p>
-                      Учитель поддерживает обучение учащихся соответствующими приемами формативного оценивания
-                      {{ focusevaluation1_form.fe1_item3 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель поддерживает обучение учащихся соответствующими приемами формативного оценивания
+                        </div>
+                        <div class="comment_value">
+                          {{ focusevaluation1_form.fe1_item3 }}
+                        </div>
+                        
+                      </div>
+                        {{ focusevaluation1_form.fe1_item3_comm }}
                     </p>
                   </li>
                   <li>
                     <p>
-                      Учитель предоставляет конструктивную обратную связь учащимся
-                      {{ focusevaluation1_form.fe1_item4 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель предоставляет конструктивную обратную связь учащимся
+                        </div>
+                        <div class="comment_value">
+                          {{ focusevaluation1_form.fe1_item4 }}
+                        </div>
+                        
+                      </div>
+                        {{ focusevaluation1_form.fe1_item4_comm }}
                     </p>
                   </li>
 
                   <li>
                     <p>
-                    Учитель использует результаты формативного оценивания для планирования уроков
-                    {{ focusevaluation1_form.fe1_item5 }}
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель использует результаты формативного оценивания для планирования уроков
+                        </div>
+                        <div class="comment_value">
+                          {{ focusevaluation1_form.fe1_item5 }}
+                        </div>
+                        
+                      </div>
+                        {{ focusevaluation1_form.fe1_item5_comm }}
                     </p>
                   </li>
 
+                  
 
 
 
@@ -112,13 +166,19 @@
                       {{ focusevaluation1_form.fe1_review_pdg }}
                     </p>
                   </li>
-
+                  <script>
+                    {% if messages %}
+                      {% for message in messages %}
+                        alert('{{message}}')
+                      {% endfor %}
+                    {% endif %}
+                    </script>
+    
+    
+                    <input type="submit" value="Отправить" class="btn btn-primary mb-3">
                   </ol>
 
 
-
-
-                <input type="submit" value="Отправить">
               </form>
             </div>
           </div>
@@ -128,4 +188,35 @@
     </div>
   </div>
 
-{% endblock %}
+
+  <link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+  <style type="text/css">
+  .select_wrp {
+    width: 300px;
+    margin: 0 auto;
+  }
+  </style>
+  
+  <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/select2.min.js"></script>
+  <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/i18n/ru.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.js-select2').select2({
+      placeholder: "Выберите учителя",
+      maximumSelectionLength: 2,
+      language: "ru"
+    });
+  });
+  document.getElementById('1').onclick = function() {
+  
+    for(var i in dict) {
+      document.getElementById(i).value = dict[i];
+    }
+  
+    this.blur();
+  
+  };
+  </script>
+  
+  {% endblock %}

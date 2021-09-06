@@ -4,6 +4,7 @@
 {% block title %}Поиск оценивания{% endblock %}
 
 {% block content %}
+<div class="container">
 <div class="content_header">
     <h1>Таблица оцениваний</h1>
 </div>
@@ -17,6 +18,7 @@
     <thead>
 		<tr>
 			<th>Учитель</th>
+            <th>Учитель-эксперт</th>
 			<th>Предмет</th>
 			<th>Год</th>
 			<th>Дата</th>
@@ -25,22 +27,13 @@
 	</thead>
     <tbody>
 
-    {% if posts1 %}
-    {% for item in posts1 %}
-    <tr>
-        <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
-        <td>{{item.subject}}</td>
-        <td>{{item.schoolyear}}</td>
-        <td>{{item.fp1_date}}</td>
-        <td>Планирование 1</td>
-    </tr>
-    {% endfor %}
-    {% endif %}
+   
 
     {% if posts1 %}
     {% for item in posts1 %}
     <tr>
         <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.user_observer}}</td>
         <td>{{item.subject}}</td>
         <td>{{item.schoolyear}}</td>
         <td>{{item.fp1_date}}</td>
@@ -53,6 +46,7 @@
     {% for item in posts2 %}
     <tr>
         <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.user_observer}}</td>
         <td>{{item.subject}}</td>
         <td>{{item.schoolyear}}</td>
         <td>{{item.ft1_date}}</td>
@@ -65,6 +59,7 @@
     {% for item in posts3 %}
     <tr>
         <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.user_observer}}</td>
         <td>{{item.subject}}</td>
         <td>{{item.schoolyear}}</td>
         <td>{{item.fe1_date}}</td>
@@ -77,6 +72,7 @@
     {% for item in posts4 %}
     <tr>
         <td><a href="{%url 'report_details' id=item.id %}">{{item.user_teacher}}</a></td>
+        <td>{{item.user_observer}}</td>
         <td>{{item.subject}}</td>
         <td>{{item.schoolyear}}</td>
         <td>{{item.fc1_date}}</td>
@@ -86,5 +82,5 @@
     {% endif %}
     </tbody>
 </table>
-
+</div>
 {% endblock %}

@@ -1,7 +1,8 @@
 {% extends "focus/base.html" %}
 
-{% block title %}Evaluation page{% endblock %}
-
+{% block title %}Комплексный анализ{% endblock %}
+{% block head %}<link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+{% endblock %}
 {% block content %}
 
 
@@ -14,15 +15,22 @@
         </div>
         <div class="formbg-outer">
           <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">{{title}}</span>
+            <div class="focus_forms">
+              
               <form id="stripe-login" method="post">
                 {% csrf_token %}
                 <ol>
                   <li>
                     <p>
                       <label for="id_user_teacher">Учитель:</label>
-                      {{ focuscomplex1_form.user_teacher }}
+
+                        <select class="js-select2" name="user_teacher" id="id_user_teacher">
+                          <option value=""></option>
+                          {% for item in user_list%}
+                            <option value="{{item.id}}">{{item}}</option>
+                          {% endfor %}
+                        </select>
+
                     </p>
                   </li>
                   <li>
@@ -64,20 +72,44 @@
                   </li>
                   <li>
                     <p>
-                        Цели обучения соответствуют месту и роли урока в структуре раздела, темы
-                      {{ focuscomplex1_form.fc1_item2}}
+                        
+                        <div class="comment_field">
+                          <div class="comment_label">
+                            Цели обучения соответствуют месту и роли урока в структуре раздела, темы </div>
+                          <div class="comment_value">
+                            {{ focuscomplex1_form.fc1_item2 }}
+                          </div>
+                          
+                        </div>
+                          {{ focuscomplex1_form.fc1_item2_comm }}
                     </p>
                   </li>
                   <li>
                     <p>
-                      Учитель обсуждает с учащимися цели обучения и ожидаемые результаты урока
-                      {{ focuscomplex1_form.fc1_item3 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель обсуждает с учащимися цели обучения и ожидаемые результаты урока </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item3 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item3_comm }}
                     </p>
                   </li>
                   <li>
                     <p>
-                      Учитель соблюдает структуру урока в соответствии с планом (при необходимости корректирует план урока, не нарушая логической последовательности этапов урока)
-                      {{ focuscomplex1_form.fc1_item4 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель соблюдает структуру урока в соответствии с планом (при необходимости корректирует план урока, не нарушая логической последовательности этапов урока) </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item4 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item4_comm }}
                     </p>
                   </li>
 
@@ -90,8 +122,16 @@
 
                   <li>
                     <p>
-                      Учитель использует приемы обучения, способствующие достижению целей обучения
-                      {{ focuscomplex1_form.fc1_item6 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель использует приемы обучения, способствующие достижению целей обучения </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item6 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item6_comm }}
                     </p>
                   </li>
 
@@ -104,32 +144,72 @@
 
                     <li>
                     <p>
-                      Учитель отслеживает вовлеченность каждого учащегося
-                      {{ focuscomplex1_form.fс1_item8 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель отслеживает вовлеченность каждого учащегося </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item8 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item8_comm }}
                     </p>
                   </li>
                     <li>
                     <p>
-                      Учитель предлагает учащимся критерии и дескрипторы оценивания в соответствии с целями обучения
-                      {{ focuscomplex1_form.fc1_item9 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель предлагает учащимся критерии и дескрипторы оценивания в соответствии с целями обучения </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item9 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item9_comm }}
                     </p>
                   </li>
                     <li>
                     <p>
-                      Учитель поддерживает обучение учащихся соответствующими приемами формативного оценивания
-                      {{ focuscomplex1_form.fc1_item10 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель поддерживает обучение учащихся соответствующими приемами формативного оценивания </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item10 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item10_comm }}
                     </p>
                   </li>
                     <li>
                     <p>
-                      Учитель предоставляет конструктивную обратную связь учащимся
-                      {{ focuscomplex1_form.fc1_item11 }}
+                     
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель предоставляет конструктивную обратную связь учащимся </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item11 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item11_comm }}
                     </p>
                   </li>
                     <li>
                     <p>
-                      Учитель использует результаты формативного оценивания для планирования уроков
-                      {{ focuscomplex1_form.fc1_item12 }}
+                     
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель использует результаты формативного оценивания для планирования уроков </div>
+                        <div class="comment_value">
+                          {{ focuscomplex1_form.fc1_item12 }}
+                        </div>
+                        
+                      </div>
+                        {{ focuscomplex1_form.fc1_item12_comm }}
                     </p>
                   </li>
 
@@ -147,13 +227,19 @@
                       {{ focuscomplex1_form.fc1_review_pdg }}
                     </p>
                   </li>
-
+                  <script>
+                    {% if messages %}
+                      {% for message in messages %}
+                        alert('{{message}}')
+                      {% endfor %}
+                    {% endif %}
+                    </script>
+    
+    
+                    <input type="submit" value="Отправить" class="btn btn-primary mb-3">
                   </ol>
 
 
-
-
-                <input type="submit" value="Отправить">
               </form>
             </div>
           </div>
@@ -163,4 +249,35 @@
     </div>
   </div>
 
-{% endblock %}
+
+  <link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+  <style type="text/css">
+  .select_wrp {
+    width: 300px;
+    margin: 0 auto;
+  }
+  </style>
+  
+  <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/select2.min.js"></script>
+  <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/i18n/ru.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.js-select2').select2({
+      placeholder: "Выберите учителя",
+      maximumSelectionLength: 2,
+      language: "ru"
+    });
+  });
+  document.getElementById('1').onclick = function() {
+  
+    for(var i in dict) {
+      document.getElementById(i).value = dict[i];
+    }
+  
+    this.blur();
+  
+  };
+  </script>
+  
+  {% endblock %}

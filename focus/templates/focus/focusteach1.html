@@ -1,7 +1,8 @@
 {% extends "focus/base.html" %}
 
-{% block title %}Evaluation page{% endblock %}
-
+{% block title %}Преподавание{% endblock %}
+{% block head %}<link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+{% endblock %}
 {% block content %}
 
 
@@ -14,17 +15,26 @@
         </div>
         <div class="formbg-outer">
           <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">{{title}}</span>
+            <div class="focus_forms">
+              
               <form id="stripe-login" method="post">
                 {% csrf_token %}
                 <ol>
+
                   <li>
                     <p>
                       <label for="id_user_teacher">Учитель:</label>
-                      {{ focusteach1_form.user_teacher }}
+
+                        <select class="js-select2" name="user_teacher" id="id_user_teacher">
+                          <option value=""></option>
+                          {% for item in user_list%}
+                            <option value="{{item.id}}">{{item}}</option>
+                          {% endfor %}
+                        </select>
+
                     </p>
                   </li>
+
                   <li>
                     <p>
                       <label for="id_subject">Предмет:</label>
@@ -64,14 +74,33 @@
                   </li>
                   <li>
                     <p>
-                      Учитель обсуждает с учащимися цели обучения и ожидаемые результаты урока
-                      {{ focusteach1_form.ft1_item2 }}
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель обсуждает с учащимися цели обучения и ожидаемые результаты урока
+                        </div>
+                        <div class="comment_value">
+                          {{ focusteach1_form.ft1_item2 }}
+                        </div>
+                        
+                      </div>
+                        {{ focusteach1_form.ft1_item2_comm }}
+                      
+                      
                     </p>
                   </li>
                   <li>
                     <p>
-                      Учитель соблюдает структуру урока в соответствии с планом (при необходимости корректирует план урока, не нарушая логической последовательности этапов урока)
-                      {{ focusteach1_form.ft1_item3 }}
+                      
+                      <div class="comment_field">
+                        <div class="comment_label">
+                          Учитель соблюдает структуру урока в соответствии с планом (при необходимости корректирует план урока, не нарушая логической последовательности этапов урока)
+                        </div>
+                        <div class="comment_value">
+                          {{ focusteach1_form.ft1_item3 }}
+                        </div>
+                        
+                      </div>
+                        {{ focusteach1_form.ft1_item3_comm }}
                     </p>
                   </li>
                   <li>
@@ -83,8 +112,17 @@
 
                   <li>
                     <p>
-                    Учитель использует приемы обучения, способствующие достижению целей обучения
-                    {{ focusteach1_form.ft1_item5 }}
+                    
+                    <div class="comment_field">
+                      <div class="comment_label">
+                        Учитель использует приемы обучения, способствующие достижению целей обучения
+                      </div>
+                      <div class="comment_value">
+                        {{ focusteach1_form.ft1_item5 }}
+                      </div>
+                      
+                    </div>
+                      {{ focusteach1_form.ft1_item5_comm }}
                     </p>
                   </li>
 
@@ -117,13 +155,19 @@
                       {{ focusteach1_form.ft1_review_pdg }}
                     </p>
                   </li>
-
+                  <script>
+                    {% if messages %}
+                      {% for message in messages %}
+                        alert('{{message}}')
+                      {% endfor %}
+                    {% endif %}
+                    </script>
+    
+    
+                    <input type="submit" value="Отправить" class="btn btn-primary mb-3">
                   </ol>
 
 
-
-
-                <input type="submit" value="Отправить">
               </form>
             </div>
           </div>
@@ -133,4 +177,35 @@
     </div>
   </div>
 
-{% endblock %}
+
+  <link rel="stylesheet" href="https://snipp.ru/cdn/select2/4.0.13/dist/css/select2.min.css">
+  <style type="text/css">
+  .select_wrp {
+    width: 300px;
+    margin: 0 auto;
+  }
+  </style>
+  
+  <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/select2.min.js"></script>
+  <script src="https://snipp.ru/cdn/select2/4.0.13/dist/js/i18n/ru.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.js-select2').select2({
+      placeholder: "Выберите учителя",
+      maximumSelectionLength: 2,
+      language: "ru"
+    });
+  });
+  document.getElementById('1').onclick = function() {
+  
+    for(var i in dict) {
+      document.getElementById(i).value = dict[i];
+    }
+  
+    this.blur();
+  
+  };
+  </script>
+  
+  {% endblock %}
